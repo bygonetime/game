@@ -1,0 +1,56 @@
+body {height: 100%;width: 100%;position: relative;}
+.warp {
+	position: relative;
+	width: 640px;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url('../images/main_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.logo{
+	position:absolute;
+	top:97px;
+	left:210px;
+}
+
+.liuzi_txt{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	-webkit-transform: translate(-50%,-160%);
+	transform: translate(-50%,-160%);
+}
+#return_index_btn{
+	position: absolute;
+	display: block;
+	background: url("../images/liuzi_success/return_index_btn.jpg") no-repeat;
+	width: 226px;
+	height: 65px;
+	left: 50%;
+	top:50%;
+	-webkit-transform: translate(-50%,50%);
+	transform: translate(-50%,50%);
+}
+
+
+/*媒体查询*/
+@media screen and (max-height:836px){
+	.logo{-webkit-transform: scale(.8);transform:scale(.8);margin-top:0px;}
+	
+}
+
+@media screen and (min-height:837px) and (max-height:900px){
+	.logo{-webkit-transform: scale(.85);transform:scale(.85);top:60px;}
+	
+}
+
+@media screen and (min-height:901px) and (max-height:960px){
+	.logo{-webkit-transform: scale(.9);transform:scale(.9);top:60px;}
+	
+}
+
+@media screen and (min-height:961px) and (max-height:1032px){
+	.logo{top:70px;}
+	
+}

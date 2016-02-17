@@ -1,0 +1,227 @@
+body {height: 100%;width: 100%;position: relative;}
+.warp {
+	position: relative;
+	width: 640px;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url('../images/main_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+.logo{
+	position:absolute;
+	top:97px;
+	left:210px;
+}
+.red_bag{
+	display:block;
+	width:524px;
+	height:746px;
+	position:absolute;
+	left:60px;
+	top:170px;
+	background:url('../images/red_bag.png') no-repeat;
+}
+#ball{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:170px;
+	
+}
+p{
+	position:absolute;
+	color:#fff;
+	font-size:25px;
+	text-align:center;
+	bottom:150px;
+	left:135px;
+}
+
+.red_logo{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,664%);
+	-webkit-transform: translate(-50%,664%);
+}
+
+/*媒体查询*/
+@media screen and (max-height:836px){
+	.logo{top:50px;}
+	.red_bag{-webkit-transform: scale(.9);transform:scale(.9);top:100px}
+	#ball{-webkit-transform: scale(.8);transform:scale(.8);top:100px}
+	p{bottom:50px;}
+}
+
+@media screen and (min-height: 837px) and (max-height: 900px){
+	.logo{top:80px;}
+	.red_bag{-webkit-transform: scale(.9);transform:scale(.9);top:120px}
+	#ball{-webkit-transform: scale(.9);transform:scale(.9);top:120px}
+	p{bottom:60px;}
+}
+
+@media screen and (min-height: 901px) and (max-height: 960px){
+	.logo{top:80px;}
+	.red_bag{top:170px}
+	#ball{top:170px}
+	p{bottom:111px;}
+}
+
+@media screen and (min-height:961px) and (max-height: 1032px){
+	p{bottom:180px;}
+	.red_logo{
+		transform: translate(-50%,824%);
+		-webkit-transform: translate(-50%,824%);
+	}
+}
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.animated.infinite {
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+.animated.redBag {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+.animated.hinge {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY,
+.animated.bounceIn,
+.animated.bounceOut {
+	-webkit-animation-duration: .75s;
+	animation-duration: .75s;
+}
+
+@-webkit-keyframes rotateIn {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg)  scale(.1);
+    transform: rotate3d(0, 0, 1, -200deg)  scale(.1);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform:   scale(2);
+    transform: scale(2);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg)  scale(.1);
+    transform: rotate3d(0, 0, 1, -200deg) scale(.1);
+    opacity:1;
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform:   scale(2);
+    transform: scale(2);
+    opacity: 1;
+  }
+}
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  5%, 10% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  15%,25%, 35%, 45%,55%,65%,75%,85%, 95% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  20%,30%, 40%, 50%,60%,70%,80%,90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  5%, 10% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  15%,25%, 35%, 45%,55%,65%,75%,85%, 95% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  20%,30%, 40%, 50%,60%,70%,80%,90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}

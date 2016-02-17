@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>留资成功提示 sinomax</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="sinomax" name="Keywords">
+		<meta name="description" content="sinomax" />
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<link type="text/css" rel="stylesheet" href="css/liuzi_success.css">
+		
+		<meta name="viewport" content="width=640,target-densitydpi=device-dpi,maximum-scale=1.0, user-scalable=no">
+		<script type="text/javascript">function setWidth(e){if(/Andriod/i.test(navigator.userAgent)){var f,d=window.innerWidth;(d!=e)&&(f=d/e),document.addEventListener("DOMContentLoaded",function(){var a=document.getElementsByTagName("body")[0];a.style.webkitTransformOrigin="left top";a.style.webkitTransform="scale("+f+")"},!1)}}setWidth(640);
+		</script>
+	</head>
+	<body>
+		<div id="warp" class="warp">
+			<img class="logo" src="images/logo.png" alt="">
+			<img src="images/liuzi_success/liuzi_txt.png" class="liuzi_txt"/>
+			<a id="return_index_btn"></a>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	$(function(){
+		FastClick.attach(document.body);
+		// 关闭关注层
+		$("#return_index_btn").on("touchstart", function(e){
+			location.href="index.html";
+		});
+
+	})
+	</script>
+</html>

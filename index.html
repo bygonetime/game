@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页 sinomax</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="sinomax" name="Keywords">
+		<meta name="description" content="sinomax" />
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<link type="text/css" rel="stylesheet" href="css/index.css">
+		
+		<meta name="viewport" content="width=640,target-densitydpi=device-dpi,maximum-scale=1.0, user-scalable=no">
+		<script type="text/javascript">function setWidth(e){if(/Andriod/i.test(navigator.userAgent)){var f,d=window.innerWidth;(d!=e)&&(f=d/e),document.addEventListener("DOMContentLoaded",function(){var a=document.getElementsByTagName("body")[0];a.style.webkitTransformOrigin="left top";a.style.webkitTransform="scale("+f+")"},!1)}}setWidth(640);
+		</script>
+	</head>
+	<body>
+		<div id="warp" class="warp">
+			<img class="logo" src="images/logo.png" alt="">
+			<h1><img class="animated fadeInDownBig" src="images/index/title.jpg" alt=""></h1>
+			<img src="images/index/bear.png" alt="" class="bear animated zoomIn">
+			<img src="images/index/fly_both.png" alt="" class="fly_both animated slideInLeft">
+			<div class="jinbi">
+				<img class="animated rotateIn tada" src="images/index/jb1.png" alt="">
+				<img class="animated tada" src="images/index/jb2.png" alt="">
+				<img class="animated rotateIn" src="images/index/jb3.png" alt="">
+				<img class="animated tada" src="images/index/jb4.png" alt="">
+				<img class="animated rotateIn" src="images/index/jb5.png" alt="">
+				<img class="animated tada" src="images/index/jb6.png" alt="">
+				<img class="animated tada" src="images/index/jb7.png" alt="">
+			</div>
+			<p class="text">猴年送你n重好礼, 现金红包等你拿！<span>快来参与领取吧！</span></p>
+ 			<a href="javascript:;" id="game_rule">游戏规则</a>
+ 			<a id="play">参与游戏</a>
+ 			<!-- 游戏规则遮罩层 -->
+			<div class="rule_mask" style="display:none;" id="rule_mask">
+			    <img class="rule" id="rule"  data-src="images/index/rule.jpg" alt="">  
+				<a id="close_rule"><!-- 关闭 --></a>
+	 		</div>
+	 		<!-- END -->
+	 		<!-- 关注遮罩层 -->
+			<div class="care_mask" style="display:none;" id="care_mask">
+				<div class="care">
+					<img class="erweima" src="images/index/erweima.jpg" alt="">
+					<p>开始游戏之前，请长按图中二维码关注 SINOMAX赛诺微信公众平台。关注成功后，请点击公众号菜单栏进入游戏。</p>
+					<button id="close_care">关 闭</button>
+				</div>
+	 		</div>
+	 		<!-- END -->
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/transform.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/alloy_touch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	$(function(){
+		FastClick.attach(document.body);
+		setTimeout(function(){
+			$("#warp").addClass("active");
+			$("#rule").attr("src",$("#rule").attr("data-src"));
+		},450)
+		// 显示规则
+		$('#game_rule').on("touchstart", function(e){
+			$("#rule_mask").show();
+		});
+		//规则滚动
+		var target = document.querySelector("#rule");
+        //给element注入transform属性
+        Transform(target);
+        var at=new AlloyTouch({
+            touch:"#rule_mask",//反馈触摸的dom
+            vertical: true,//不必需，默认是true代表监听竖直方向touch
+            target: target, //运动的对象
+            property: "translateY",  //被滚动的属性
+            sensitivity: 1,//不必需,触摸区域的灵敏度，默认值为1，可以为负数
+            factor: 1,//不必需,默认值是1代表touch区域的1px的对应target.y的1
+            min: window.innerHeight - 45 - 48 - 2000, //不必需,滚动属性的最小值
+            max: 0, //不必需,滚动属性的最大值
+            step:40
+        })
+		
+		// 规则层关闭
+		$('#close_rule').on("touchstart", function(e){
+			$("#rule_mask").css("display","none");
+		});
+		// 点击参与游戏
+		$("#play").on("touchend", function(e){
+			//判断有无关注
+			$("#care_mask").show();   //没有关注
+	
+		});
+		
+		
+		$("#care_mask").on("touchstart", function(e){
+			location.href="product.html"
+		});
+		// 关闭关注层
+		$("#close_care").on("touchstart", function(e){
+			$("#care_mask").hide();
+		});
+
+	})
+	</script>
+</html>
